@@ -1,9 +1,5 @@
 terraform {
-  required_version            = ">= 0.12"
-}
-
-module "global" {
-  source                     = "./../../../../_base_module/aws"
+  required_version            = ">= 0.14"
 }
 
 locals {
