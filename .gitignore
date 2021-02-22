@@ -1,60 +1,83 @@
-## Versions
+# Local .terraform directories
+**/.terraform/*
 
-- Module tested for Terraform 0.14.
-- AWS provider version [3.29.0](https://registry.terraform.io/providers/hashicorp/aws/latest)
-- `main` branch: Provider versions not pinned to keep up with Terraform releases
-- `tags` releases: Tags are pinned with versions (use tag latest tag in your releases)
+# .tfstate files
+*.tfstate
+*.tfstate.*
 
-**NOTE:**
+# Crash log files
+crash.log
 
-- Read more on [tfremote](https://github.com/tomarv2/tfremote)
+# Ignore any .tfvars files that are generated automatically for each Terraform run. Most
+# .tfvars files are managed as part of configuration and so should be included in
+# version control.
+#
+# example.tfvars
 
-## Usage
+# Ignore override files as they are usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
 
-Recommended method:
+# Include override files you do wish to add to version control using negated pattern
+#
+# !example_override.tf
 
-- Create python 3.6+ virtual environment
-```
-python3 -m venv <venv name>
-```
+# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
+# example: *tfplan*
 
-- Install package:
-```
-pip install tfremote
-```
+.idea/
+.terraform.lock.hcl
 
-- Set below environment variables:
-```
-export TF_AWS_BUCKET=<remote state bucket name>
-export TF_AWS_PROFILE=default
-export TF_AWS_BUCKET_REGION=us-west-2
-export PATH=$PATH:/usr/local/bin/
-```
+# go
+.DS_Store
+*.[56789ao]
+*.a[56789o]
+*.so
+*.pyc
+._*
+.nfs.*
+[56789a].out
+*~
+*.orig
+*.rej
+*.exe
+.*.swp
+core
+*.cgo*.go
+*.cgo*.c
+_cgo_*
+_obj
+_test
+_testmain.go
 
-- Update:
-```
-example/custom/sample.tfvars
-```
+/VERSION.cache
+/bin/
+/build.out
+/doc/articles/wiki/*.bin
+/goinstall.log
+/last-change
+/misc/cgo/life/run.out
+/misc/cgo/stdio/run.out
+/misc/cgo/testso/main
+/pkg/
+/src/*.*/
+/src/cmd/cgo/zdefaultcc.go
+/src/cmd/dist/dist
+/src/cmd/go/internal/cfg/zdefaultcc.go
+/src/cmd/go/internal/cfg/zosarch.go
+/src/cmd/internal/objabi/zbootstrap.go
+/src/go/build/zcgo.go
+/src/go/doc/headscan
+/src/runtime/internal/sys/zversion.go
+/src/unicode/maketables
+/test.out
+/test/garbage/*.out
+/test/pass.out
+/test/run.out
+/test/times.out
 
-- Change to:
-```
-example/base
-```
-
-- Run and verify the output before deploying:
-```
-tf -cloud aws plan -var-file <path to .tfvars file>
-```
-
-- Run below to deploy:
-```
-tf -cloud aws apply -var-file <path to .tfvars file>
-```
-
-- Run below to destroy:
-```
-tf -cloud aws destroy -var-file <path to .tfvars file>
-```
-
-Please refer to example directory [link](example/README.md) for references.
-
+# ignore requried vars file
+**/test_data
