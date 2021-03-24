@@ -1,7 +1,3 @@
-variable "email" {
-  description = "email address to be used for tagging (suggestion: use group email address)"
-}
-
 variable "teamid" {
   description = "(Required) Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply'"
 }
@@ -26,7 +22,14 @@ variable "timeout" {
   default = 60
 }
 
-variable "aws_region" {}
+variable "profile_to_use" {
+  description = "Getting values from ~/.aws/credentials"
+  default     = "default"
+}
+
+variable "aws_region" {
+  default = "us-west-2"
+}
 
 variable "target_arn" {}
 

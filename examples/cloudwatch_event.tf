@@ -1,7 +1,6 @@
 module "cloudwatch_event" {
   source =   "../.."
 
-  email                                 = var.email
   teamid                                = var.teamid
   prjid                                 = var.prjid
 
