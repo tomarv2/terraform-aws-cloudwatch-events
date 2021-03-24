@@ -16,15 +16,23 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ACTIVE_CLOUD_PROJECT_ACCOUNT" value="varun.tomar@databricks.com" />
+    <property name="ACTIVE_CLOUD_PROJECT_ID" value="security-269000" />
+    <property name="ACTIVE_CLOUD_PROJECT_NAME" value="dev-security" />
+    <property name="ACTIVE_CLOUD_PROJECT_NUMBER" value="273335848198" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210323_0000" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/example" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/example" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -42,6 +50,7 @@
       <workItem from="1613587963458" duration="206000" />
       <workItem from="1613590164829" duration="49000" />
       <workItem from="1613970381641" duration="215000" />
+      <workItem from="1616555173148" duration="374000" />
     </task>
     <servers />
   </component>
