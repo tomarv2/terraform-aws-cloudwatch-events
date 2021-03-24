@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_event_rule" "event_rule" {
-  count               = var.add_eventrule ? 1 : 0
+  count               = var.deploy_event_rule ? 1 : 0
 
   name                = "${var.teamid}-${var.prjid}-rule"
   description         = var.description
@@ -8,7 +8,7 @@ resource "aws_cloudwatch_event_rule" "event_rule" {
 }
 
 resource "aws_cloudwatch_event_target" "event_target_input_type" {
-  count              = var.add_eventtarget ? 1 : 0
+  count              = var.deploy_event_target ? 1 : 0
 
   rule                = aws_cloudwatch_event_rule.event_rule.*.id[count.index]
   arn                 = var.target_arn

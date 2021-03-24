@@ -14,9 +14,13 @@ variable "service_role" {
   description = "service role to be used by CICD"
 }
 
-variable "schedule" {}
+variable "schedule" {
+  default = "rate(1 day)"
+}
 
-variable "branch" {}
+variable "branch" {
+  default = "main"
+}
 
 variable "timeout" {
   default = 60
@@ -33,6 +37,14 @@ variable "aws_region" {
 
 variable "target_arn" {}
 
-variable "add_eventtarget" {}
+variable "deploy_event_target" {
+  description = "feature flag, true or false"
+  default     = true
+  type        = bool
+}
 
-variable "add_eventrule" {}
+variable "deploy_event_rule" {
+  description = "feature flag, true or false"
+  default     = true
+  type        = bool
+}

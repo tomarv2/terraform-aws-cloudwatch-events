@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2a50223-979c-40ee-8a69-b70f2d022d0a" name="Default Changelist" comment="" />
+    <list default="true" id="d2a50223-979c-40ee-8a69-b70f2d022d0a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/examples/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudwatch_event.tf" beforeDir="false" afterPath="$PROJECT_DIR$/cloudwatch_event.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/sample.tfvars" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/examples/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/variables.tf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210323_0000" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210323_0001" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -50,7 +58,7 @@
       <workItem from="1613587963458" duration="206000" />
       <workItem from="1613590164829" duration="49000" />
       <workItem from="1613970381641" duration="215000" />
-      <workItem from="1616555173148" duration="374000" />
+      <workItem from="1616555173148" duration="1438000" />
     </task>
     <servers />
   </component>
