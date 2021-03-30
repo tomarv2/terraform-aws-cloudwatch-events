@@ -12,6 +12,7 @@ variable "description" {
 
 variable "service_role" {
   description = "service role to be used by CICD"
+  default = null
 }
 
 variable "schedule" {
