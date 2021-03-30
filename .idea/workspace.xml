@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d2a50223-979c-40ee-8a69-b70f2d022d0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudwatch_event.tf" beforeDir="false" afterPath="$PROJECT_DIR$/cloudwatch_event.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/examples/main.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/output.tf" beforeDir="false" afterPath="$PROJECT_DIR$/examples/output.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/remote_backend.tf" beforeDir="false" afterPath="$PROJECT_DIR$/examples/remote_backend.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.tf" beforeDir="false" afterPath="$PROJECT_DIR$/output.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/versions.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +62,7 @@
       <workItem from="1613590164829" duration="49000" />
       <workItem from="1613970381641" duration="215000" />
       <workItem from="1616555173148" duration="2797000" />
-      <workItem from="1617087652912" duration="2450000" />
+      <workItem from="1617087652912" duration="2788000" />
     </task>
     <servers />
   </component>
