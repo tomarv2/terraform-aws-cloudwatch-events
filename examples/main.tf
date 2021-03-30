@@ -2,7 +2,7 @@ module "cloudwatch_event" {
   source = "../"
 
   service_role = ""
-  target_arn = ""
+  target_arn   = ""
   #-----------------------------------------------
   # Note: Do not change teamid and prjid once set.
   teamid = var.prjid

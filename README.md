@@ -48,7 +48,6 @@ pip install tfremote
 export TF_AWS_BUCKET=<remote state bucket name>
 export TF_AWS_PROFILE=default
 export TF_AWS_BUCKET_REGION=us-west-2
-export PATH=$PATH:/usr/local/bin/
 ```  
 
 - Updated `examples` directory with required values.
@@ -68,20 +67,32 @@ tf -cloud aws apply -var='teamid=foo' -var='prjid=bar'>
 tf -cloud aws destroy -var='teamid=foo' -var='prjid=bar'>
 ```
 
-Please refer to example directory [link](examples) for references.
+Please refer to examples directory [link](examples) for references.
+## Requirements
 
+| Name | Version |
+|------|---------|
+| terraform | >= 0.14 |
+| aws | ~> 3.29 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | ~> 3.29 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| add\_eventrule | n/a | `any` | n/a | yes |
-| add\_eventtarget | n/a | `any` | n/a | yes |
-| aws\_region | n/a | `any` | n/a | yes |
-| branch | n/a | `any` | n/a | yes |
-| description | n/a | `string` | `"cloudwatch event"` | no |
+| aws\_region | n/a | `string` | `"us-west-2"` | no |
+| branch | n/a | `string` | `"main"` | no |
+| deploy\_event\_rule | feature flag, true or false | `bool` | `true` | no |
+| deploy\_event\_target | feature flag, true or false | `bool` | `true` | no |
+| description | n/a | `any` | `null` | no |
 | prjid | (Required) Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply' | `any` | n/a | yes |
-| schedule | n/a | `any` | n/a | yes |
+| profile\_to\_use | Getting values from ~/.aws/credentials | `string` | `"default"` | no |
+| schedule | n/a | `string` | `"rate(1 day)"` | no |
 | service\_role | service role to be used by CICD | `any` | n/a | yes |
 | target\_arn | n/a | `any` | n/a | yes |
 | teamid | (Required) Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply' | `any` | n/a | yes |
@@ -91,5 +102,5 @@ Please refer to example directory [link](examples) for references.
 
 | Name | Description |
 |------|-------------|
-| cloudwatch\_event | The cloudwatch event rule arn. |
-
+| cloudwatch\_event\_rule\_arn | The cloudwatch event rule arn. |
+| cloudwatch\_event\_target\_arn | The cloudwatch event target arn. |

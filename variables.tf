@@ -7,7 +7,7 @@ variable "prjid" {
 }
 
 variable "description" {
-  default = "cloudwatch event"
+  default = null
 }
 
 variable "service_role" {
