@@ -27,7 +27,6 @@ variable "schedule" {
 }
 
 variable "branch" {
-
   description = "branch to use for cicd"
   default     = "main"
   type        = string
