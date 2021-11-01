@@ -17,7 +17,7 @@ resource "aws_cloudwatch_event_rule" "event_rule" {
 resource "aws_cloudwatch_event_target" "event_target_input_type" {
   count = var.deploy_event_target ? 1 : 0
 
-  target_id = var.target_name != null ? var.name : "${var.teamid}-${var.prjid}"
+  target_id = var.target_name != null ? var.target_name : "${var.teamid}-${var.prjid}"
   rule      = aws_cloudwatch_event_rule.event_rule.*.id[count.index]
   arn       = var.target_arn
   role_arn  = var.service_role
