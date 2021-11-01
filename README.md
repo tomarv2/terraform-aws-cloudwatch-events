@@ -25,13 +25,22 @@
 - `tags` releases: Tags are pinned with versions (use <a href="https://github.com/tomarv2/terraform-aws-cloudwatch-events/tags" alt="GitHub tag">
         <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-aws-cloudwatch-events" /></a>).
 
-**NOTE:**
-
-- Read more on [tfremote](https://github.com/tomarv2/tfremote)
 
 ## Usage
 
-Recommended method:
+### Option 1:
+
+```
+terrafrom init
+terraform plan -var='teamid=tryme' -var='prjid=project1'
+terraform apply -var='teamid=tryme' -var='prjid=project1'
+terraform destroy -var='teamid=tryme' -var='prjid=project1'
+```
+**Note:** With this option please take care of remote state storage
+
+### Option 2:
+
+#### Recommended method (stores remote state in S3 using `prjid` and `teamid` to create directory structure):
 
 - Create python 3.8+ virtual environment
 ```
@@ -64,20 +73,23 @@ export AWS_SECRET_ACCESS_KEY=<aws_secret_access_key>
 
 - Run and verify the output before deploying:
 ```
-tf -c=aws plan -var='teamid=foo' -var='prjid=bar'>
+tf -c=aws plan -var='teamid=foo' -var='prjid=bar'
 ```
 
 - Run below to deploy:
 ```
-tf -c=aws apply -var='teamid=foo' -var='prjid=bar'>
+tf -c=aws apply -var='teamid=foo' -var='prjid=bar'
 ```
 
 - Run below to destroy:
 ```
-tf -c=aws destroy -var='teamid=foo' -var='prjid=bar'>
+tf -c=aws destroy -var='teamid=foo' -var='prjid=bar'
 ```
 
-Please refer to examples directory [link](examples) for references.
+**NOTE:**
+
+- Read more on [tfremote](https://github.com/tomarv2/tfremote)
+---
 
 ## Requirements
 
@@ -120,6 +132,7 @@ No modules.
 | <a name="input_service_role"></a> [service\_role](#input\_service\_role) | service role to be used by cicd | `string` | `null` | no |
 | <a name="input_suffix"></a> [suffix](#input\_suffix) | suffix to be added to cloudwatch rule name | `string` | `"rule"` | no |
 | <a name="input_target_arn"></a> [target\_arn](#input\_target\_arn) | target arn | `string` | n/a | yes |
+| <a name="input_target_name"></a> [target\_name](#input\_target\_name) | Cloudwatch target name | `string` | `null` | no |
 | <a name="input_teamid"></a> [teamid](#input\_teamid) | (Required) Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply' | `string` | n/a | yes |
 | <a name="input_timeout"></a> [timeout](#input\_timeout) | timeout for cloudwatch event | `number` | `60` | no |
 
