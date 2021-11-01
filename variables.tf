@@ -84,3 +84,9 @@ variable "name" {
   type        = string
   default     = null
 }
+
+variable "target_name" {
+  description = "Cloudwatch target name"
+  type        = string
+  default     = null
+}
