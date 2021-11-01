@@ -78,3 +78,9 @@ variable "suffix" {
   default     = "rule"
   type        = string
 }
+
+variable "name" {
+  description = "Cloudwatch event rule name"
+  type        = string
+  default     = null
+}

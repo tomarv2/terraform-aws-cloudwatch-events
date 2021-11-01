@@ -6,8 +6,8 @@ locals {
 resource "aws_cloudwatch_event_rule" "event_rule" {
   count = var.deploy_event_rule ? 1 : 0
 
-  name                = "${var.teamid}-${var.prjid}-${var.suffix}"
-  description         = var.description == null ? "Managed by Terraform: ${var.teamid}-${var.prjid}" : var.description
+  name                = var.name != null ? var.name : "${var.teamid}-${var.prjid}"
+  description         = var.description == null ? "Terraform managed: ${var.teamid}-${var.prjid}" : var.description
   schedule_expression = var.schedule
   role_arn            = var.service_role
 
