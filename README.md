@@ -84,13 +84,13 @@ Please refer to examples directory [link](examples) for references.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.1 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.47 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.63 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.47 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.63 |
 
 ## Modules
 
@@ -113,6 +113,7 @@ No modules.
 | <a name="input_deploy_event_rule"></a> [deploy\_event\_rule](#input\_deploy\_event\_rule) | feature flag, true or false | `bool` | `true` | no |
 | <a name="input_deploy_event_target"></a> [deploy\_event\_target](#input\_deploy\_event\_target) | feature flag, true or false | `bool` | `true` | no |
 | <a name="input_description"></a> [description](#input\_description) | description for the cloudwatch event | `string` | `null` | no |
+| <a name="input_name"></a> [name](#input\_name) | Cloudwatch event rule name | `string` | `null` | no |
 | <a name="input_prjid"></a> [prjid](#input\_prjid) | (Required) Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply' | `string` | n/a | yes |
 | <a name="input_profile_to_use"></a> [profile\_to\_use](#input\_profile\_to\_use) | Getting values from ~/.aws/credentials | `string` | `"default"` | no |
 | <a name="input_schedule"></a> [schedule](#input\_schedule) | schedule for the cloudwatch event | `string` | `"rate(1 day)"` | no |
