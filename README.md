@@ -122,18 +122,18 @@ No modules.
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | aws region to deploy resources | `string` | `"us-west-2"` | no |
 | <a name="input_branch"></a> [branch](#input\_branch) | branch to use for cicd | `string` | `"main"` | no |
 | <a name="input_custom_input"></a> [custom\_input](#input\_custom\_input) | custom input to be included in generated events | `map(any)` | `null` | no |
-| <a name="input_deploy_event_rule"></a> [deploy\_event\_rule](#input\_deploy\_event\_rule) | feature flag, true or false | `bool` | `true` | no |
-| <a name="input_deploy_event_target"></a> [deploy\_event\_target](#input\_deploy\_event\_target) | feature flag, true or false | `bool` | `true` | no |
+| <a name="input_deploy_event_rule"></a> [deploy\_event\_rule](#input\_deploy\_event\_rule) | Feature flag, true or false | `bool` | `true` | no |
+| <a name="input_deploy_event_target"></a> [deploy\_event\_target](#input\_deploy\_event\_target) | Feature flag, true or false | `bool` | `true` | no |
 | <a name="input_description"></a> [description](#input\_description) | description for the cloudwatch event | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | Cloudwatch event rule name | `string` | `null` | no |
-| <a name="input_prjid"></a> [prjid](#input\_prjid) | (Required) Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply' | `string` | n/a | yes |
-| <a name="input_profile_to_use"></a> [profile\_to\_use](#input\_profile\_to\_use) | Getting values from ~/.aws/credentials | `string` | `"default"` | no |
+| <a name="input_prjid"></a> [prjid](#input\_prjid) | Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply' | `string` | n/a | yes |
+| <a name="input_profile"></a> [profile\_to\_use](#input\_profile\_to\_use) | Getting values from ~/.aws/credentials | `string` | `"default"` | no |
 | <a name="input_schedule"></a> [schedule](#input\_schedule) | schedule for the cloudwatch event | `string` | `"rate(1 day)"` | no |
 | <a name="input_service_role"></a> [service\_role](#input\_service\_role) | service role to be used by cicd | `string` | `null` | no |
 | <a name="input_suffix"></a> [suffix](#input\_suffix) | suffix to be added to cloudwatch rule name | `string` | `"rule"` | no |
 | <a name="input_target_arn"></a> [target\_arn](#input\_target\_arn) | target arn | `string` | n/a | yes |
 | <a name="input_target_name"></a> [target\_name](#input\_target\_name) | Cloudwatch target name | `string` | `null` | no |
-| <a name="input_teamid"></a> [teamid](#input\_teamid) | (Required) Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply' | `string` | n/a | yes |
+| <a name="input_teamid"></a> [teamid](#input\_teamid) | Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply' | `string` | n/a | yes |
 | <a name="input_timeout"></a> [timeout](#input\_timeout) | timeout for cloudwatch event | `number` | `60` | no |
 
 ## Outputs
