@@ -38,7 +38,7 @@ variable "timeout" {
   type        = number
 }
 
-variable "profile_to_use" {
+variable "profile" {
   description = "Getting values from ~/.aws/credentials"
   default     = "default"
   type        = string
