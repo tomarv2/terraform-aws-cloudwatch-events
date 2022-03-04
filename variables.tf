@@ -61,12 +61,6 @@ variable "custom_input" {
   type        = map(any)
 }
 
-variable "suffix" {
-  description = "suffix to be added to cloudwatch rule name"
-  default     = "rule"
-  type        = string
-}
-
 variable "name" {
   description = "Cloudwatch event rule name"
   type        = string
