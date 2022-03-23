@@ -66,3 +66,9 @@ variable "name" {
   type        = string
   default     = null
 }
+
+variable "suffix" {
+  description = "suffix to be added to cloudwatch rule name"
+  default     = "rule"
+  type        = string
+}
