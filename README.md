@@ -18,7 +18,7 @@
 ### Versions
 
 - Module tested for Terraform 1.0.1.
-- AWS provider version [3.74](https://registry.terraform.io/providers/hashicorp/aws/latest)
+- AWS provider version [4.35](https://registry.terraform.io/providers/hashicorp/aws/latest)
 - `main` branch: Provider versions not pinned to keep up with Terraform releases.
 - `tags` releases: Tags are pinned with versions (use <a href="https://github.com/tomarv2/terraform-aws-cloudwatch-events/tags" alt="GitHub tag">
         <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-aws-cloudwatch-events" /></a>).
@@ -38,7 +38,7 @@ terraform destroy -var='teamid=tryme' -var='prjid=project1'
 
 #### Option 2:
 
-##### Recommended method (stores remote state in S3 using `prjid` and `teamid` to create directory structure):
+##### Recommended method (stores remote state in remote backend(S3,  Azure storage, or Google bucket) using `prjid` and `teamid` to create directory structure):
 
 - Create python 3.8+ virtual environment
 ```
@@ -92,13 +92,13 @@ tf -c=aws destroy -var='teamid=foo' -var='prjid=bar'
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.1 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.74 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.35 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.74 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.35 |
 
 ## Modules
 
@@ -115,24 +115,15 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_branch"></a> [branch](#input\_branch) | branch to use for cicd | `string` | `"main"` | no |
-| <a name="input_custom_input"></a> [custom\_input](#input\_custom\_input) | custom input to be included in generated events | `map(any)` | `null` | no |
-| <a name="input_deploy_event_rule"></a> [deploy\_event\_rule](#input\_deploy\_event\_rule) | Feature flag, true or false | `bool` | `true` | no |
-| <a name="input_deploy_event_target"></a> [deploy\_event\_target](#input\_deploy\_event\_target) | Feature flag, true or false | `bool` | `true` | no |
-| <a name="input_description"></a> [description](#input\_description) | description for the cloudwatch event | `string` | `null` | no |
-| <a name="input_name"></a> [name](#input\_name) | Cloudwatch event rule name | `string` | `null` | no |
+| <a name="input_cloudwatch_event_config"></a> [cloudwatch\_event\_config](#input\_cloudwatch\_event\_config) | Cloudwatch event configuration | `map(any)` | `{}` | no |
+| <a name="input_extra_tags"></a> [extra\_tags](#input\_extra\_tags) | Additional tags to associate | `map(string)` | `{}` | no |
 | <a name="input_prjid"></a> [prjid](#input\_prjid) | Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply' | `string` | n/a | yes |
-| <a name="input_schedule"></a> [schedule](#input\_schedule) | schedule for the cloudwatch event | `string` | `"rate(1 day)"` | no |
-| <a name="input_service_role"></a> [service\_role](#input\_service\_role) | service role to be used by cicd | `string` | `null` | no |
-| <a name="input_suffix"></a> [suffix](#input\_suffix) | suffix to be added to cloudwatch rule name | `string` | `"rule"` | no |
-| <a name="input_target_arn"></a> [target\_arn](#input\_target\_arn) | target arn | `string` | n/a | yes |
 | <a name="input_teamid"></a> [teamid](#input\_teamid) | Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply' | `string` | n/a | yes |
-| <a name="input_timeout"></a> [timeout](#input\_timeout) | timeout for cloudwatch event | `number` | `60` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_cloudwatch_event_rule_arn"></a> [cloudwatch\_event\_rule\_arn](#output\_cloudwatch\_event\_rule\_arn) | The cloudwatch event rule ARN |
-| <a name="output_cloudwatch_event_target_arn"></a> [cloudwatch\_event\_target\_arn](#output\_cloudwatch\_event\_target\_arn) | The cloudwatch event target ARN |
+| <a name="output_event_rule_arn"></a> [event\_rule\_arn](#output\_event\_rule\_arn) | The cloudwatch event rule ARN |
+| <a name="output_event_target_arn"></a> [event\_target\_arn](#output\_event\_target\_arn) | The cloudwatch event target ARN |
 <!-- END_TF_DOCS -->

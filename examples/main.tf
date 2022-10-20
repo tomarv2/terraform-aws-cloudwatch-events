@@ -2,7 +2,7 @@ terraform {
   required_version = ">= 1.0.1"
   required_providers {
     aws = {
-      version = "~> 3.74"
+      version = "~> 4.35"
     }
   }
 }
@@ -13,9 +13,12 @@ provider "aws" {
 
 module "cloudwatch_event" {
   source = "../"
-
-  service_role = "<>"
-  target_arn   = "<>"
+  cloudwatch_event_config = {
+    demo_rule = {
+      service_role = "arn:aws:iam::123456789012:role/demo-role"
+      target_arn   = "<lambda_role>"
+    }
+  }
   #-----------------------------------------------
   # Note: Do not change teamid and prjid once set.
   teamid = var.prjid

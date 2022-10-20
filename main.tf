@@ -1,25 +1,19 @@
-locals {
-  default_input = { "sourceVersion" = var.branch, "timeoutInMinutesOverride" = var.timeout }
-  event_input   = var.custom_input == null ? local.default_input : var.custom_input
-}
-
 resource "aws_cloudwatch_event_rule" "event_rule" {
-  count = var.deploy_event_rule ? 1 : 0
+  for_each = var.cloudwatch_event_config != null ? var.cloudwatch_event_config : {}
 
-  name                = var.name != null ? "${var.name}-${var.suffix}" : "${var.teamid}-${var.prjid}-${var.suffix}"
-  description         = var.description == null ? "Terraform managed: ${var.teamid}-${var.prjid}" : var.description
-  schedule_expression = var.schedule
-  role_arn            = var.service_role
+  name                = each.key
+  description         = try(each.value.description, "Terraform managed: ${var.teamid}-${var.prjid}")
+  schedule_expression = try(each.value.schedule, "rate(1 day)")
+  role_arn            = each.value.service_role
 
-  tags = merge(local.shared_tags)
+  tags = merge(local.shared_tags, var.extra_tags)
 }
 
 resource "aws_cloudwatch_event_target" "event_target_input_type" {
-  count = var.deploy_event_target ? 1 : 0
+  for_each = var.cloudwatch_event_config != null ? var.cloudwatch_event_config : {}
 
-  target_id = var.name != null ? var.name : "${var.teamid}-${var.prjid}"
-  rule      = aws_cloudwatch_event_rule.event_rule.*.id[count.index]
-  arn       = var.target_arn
-  role_arn  = var.service_role
-  input     = jsonencode(local.event_input)
+  target_id = each.key
+  rule      = join("", [for rule in aws_cloudwatch_event_rule.event_rule : rule.id])
+  arn       = each.value.target_arn
+  input     = jsonencode(try(each.value.event_input, { "sourceVersion" = try(each.value.branch, "main"), "timeoutInMinutesOverride" = try(each.value.timeout, 60) }))
 }
