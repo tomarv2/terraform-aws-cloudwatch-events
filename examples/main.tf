@@ -13,7 +13,7 @@ provider "aws" {
 
 module "cloudwatch_event" {
   source = "../"
-  cloudwatch_event_config = {
+  config = {
     demo_rule = {
       service_role = "arn:aws:iam::123456789012:role/demo-role"
       target_arn   = "<lambda_role>"

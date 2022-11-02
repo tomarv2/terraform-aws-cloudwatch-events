@@ -16,7 +16,7 @@ variable "region" {
   type        = string
 }
 
-variable "cloudwatch_event_config" {
+variable "config" {
   description = "Cloudwatch event configuration"
   type        = map(any)
   default     = {}

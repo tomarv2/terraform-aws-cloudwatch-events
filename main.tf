@@ -1,8 +1,8 @@
 resource "aws_cloudwatch_event_rule" "event_rule" {
-  for_each = var.cloudwatch_event_config != null ? var.cloudwatch_event_config : {}
+  for_each = var.config != null ? var.config : {}
 
   name                = each.key
-  description         = try(each.value.description, "Terraform managed: ${var.teamid}-${var.prjid}")
+  description         = try(each.value.description, "Terraform managed")
   schedule_expression = try(each.value.schedule, "rate(1 day)")
   role_arn            = each.value.service_role
 
@@ -10,7 +10,7 @@ resource "aws_cloudwatch_event_rule" "event_rule" {
 }
 
 resource "aws_cloudwatch_event_target" "event_target_input_type" {
-  for_each = var.cloudwatch_event_config != null ? var.cloudwatch_event_config : {}
+  for_each = var.config != null ? var.config : {}
 
   target_id = each.key
   rule      = join("", [for rule in aws_cloudwatch_event_rule.event_rule : rule.id])
