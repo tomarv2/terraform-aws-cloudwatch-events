@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_event_rule" "event_rule" {
-  for_each = var.config != null ? var.config : {}
+  for_each = var.config
 
   name                = each.key
   description         = try(each.value.description, "Terraform managed")
@@ -10,7 +10,7 @@ resource "aws_cloudwatch_event_rule" "event_rule" {
 }
 
 resource "aws_cloudwatch_event_target" "event_target_input_type" {
-  for_each = var.config != null ? var.config : {}
+  for_each = var.config
 
   target_id = each.key
   rule      = join("", [for rule in aws_cloudwatch_event_rule.event_rule : rule.id])
